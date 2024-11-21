@@ -9,6 +9,19 @@ on:
 
 jobs:
 
+  wait_for_webserver:
+    runs-on: ubuntu-latest
+
+    
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v3
+        
+    - name: run_sh
+      run: bash /wait-for-webserver.sh
+    
+
   test_dockerized_webserver:
 
     runs-on: ubuntu-latest
